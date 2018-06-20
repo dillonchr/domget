@@ -1,0 +1,22 @@
+{
+  "name": "@dillonchr/domget",
+  "version": "1.0.0",
+  "description": "get url, parse html, give back results",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dillonchr/domget.git"
+  },
+  "author": "@dillonchr",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/dillonchr/domget/issues"
+  },
+  "homepage": "https://github.com/dillonchr/domget#readme",
+  "dependencies": {
+    "node-html-parser": "^1.1.6"
+  }
+}
