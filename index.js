@@ -1,5 +1,5 @@
 const fetch = require('@dillonchr/fetch');
-const {parse} = require('node-html-parser');
+const cheerio = require('cheerio');
 
 module.exports = (urlOrOpts, callback) => {
     const opts = typeof urlOrOpts === 'string' ?
@@ -10,7 +10,7 @@ module.exports = (urlOrOpts, callback) => {
             return callback(err);
         }
         try {
-            const dom = parse(body);
+            const dom = cheerio.load(body);
             callback(null, dom);
         } catch(parseError) {
             callback(parseError);

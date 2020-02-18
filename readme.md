@@ -9,9 +9,15 @@ This isn't meant to replace JSDOM for other folks. Just for funhouse.
 `npm i @dillonchr/domget`
 
 ## Usage
-Handles http and https. It will break if you feed it a 301 url that redirects http to https. But anyway usage is simple.
+Handles http and https. It will break if you feed it a 301 url that redirects http to https. But anyway usage is simple. It uses @dillonchr/fetch to load HTML and then uses [cheerio](https://github.com/cheeriojs/cheerio#selectors) to parse it to be queryable. Check out Cheerio's readme for usage. It's jquery style.
 
 ```js
 const domget = require('@dillonchr/domget');
-domget('https://docs.npmjs.com/getting-started/scoped-packages', (err, dom) => console.log(err || dom.querySelector('h1').text));
+domget('https://docs.npmjs.com/getting-started/scoped-packages', (err, $) => {
+    if (err) {
+        console.error('No dice', err);
+    } else {
+        console.log('npmjs says:', $('h1').text());
+    }
+});
 ```

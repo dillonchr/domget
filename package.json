@@ -4,7 +4,7 @@
   "description": "get url, parse html, give back results",
   "main": "index.js",
   "scripts": {
-    "test": "echo 0"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,6 @@
   "homepage": "https://github.com/dillonchr/domget#readme",
   "dependencies": {
     "@dillonchr/fetch": "^1.0.1",
-    "node-html-parser": "^1.1.6"
+    "cheerio": "^1.0.0-rc.3"
   }
 }
